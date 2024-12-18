@@ -2,20 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .header_top__icon_wrapper {
+    @apply bg-gray-200 rounded-md p-[6px] m-[6px] text-[18px] cursor-pointer hover:bg-pink-400 hover:text-white;
   }
-}
+  .navbar_link {
+    position: relative; /* Required for absolute positioning of ::after */
+    color: inherit; /* Keeps the text color consistent */
+    font-size: 25px;
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  .navbar_link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Position the line below the text */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ff8f9c;
+    transform: scaleX(0); /* Initially, set scaleX to 0 (hidden) */
+    transform-origin: left; /* Start scaling from the left */
+    transition: transform 0.4s ease-in-out; /* Smooth transition */
+  }
+
+  .navbar_link:hover::after {
+    transform: scaleX(1); /* Scale to 100% on hover */
+  }
+
+  .navbar_link:hover {
+    color: #ff8f9c;
+    transition: color 0.4s; /* Smooth color transition */
+  }
 }
