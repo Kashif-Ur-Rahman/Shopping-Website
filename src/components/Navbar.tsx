@@ -43,7 +43,7 @@ const Navbar = () => {
                     <Link className='navbar_link relative' href='#'>
                         Blog
                     </Link>
-                    <Link className='navbar_link relative' href='#'>
+                    <Link className='navbar_link relative text-red-500' href='#'>
                         Hot Offers
                     </Link>
                 </div>

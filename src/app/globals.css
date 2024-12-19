@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Prevent body overflow */
+body {
+  overflow-x: hidden;
+}
+
 @layer components {
   .header_top__icon_wrapper {
     @apply bg-gray-200 rounded-md p-[6px] m-[6px] text-[18px] cursor-pointer hover:bg-pink-400 hover:text-white;

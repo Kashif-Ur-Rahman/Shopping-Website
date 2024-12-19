@@ -11,7 +11,11 @@ const HeaderMain = () => {
             <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
                 {/* Logo Section */}
                 <div className="font-bold text-3xl sm:text-4xl text-center sm:text-left text-blackish">
-                    Logo
+                    <img
+                        src="/Shopping-Hub-logo.png"
+                        alt="Shopping Hub Logo"
+                        className="w-20 h-20 sm:w-32 sm:h-32"
+                    />
                 </div>
 
                 {/* Search Bar */}
