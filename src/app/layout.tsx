@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MobNavbar from "@/components/MobNavbar";
 
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,22 +30,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        <title>Shopping-Hub</title>
-        <meta name="description" content="This is the E-Commerce Shopping website" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <HeaderTop />
-        <HeaderMain />
-        <Navbar />
-        <MobNavbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <head>
+          <link rel="icon" href="/favicon.png" type="image/png" />
+          <title>Shopping-Hub</title>
+          <meta name="description" content="This is the E-Commerce Shopping website" />
+        </head>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <HeaderTop />
+          <HeaderMain />
+          <Navbar />
+          <MobNavbar />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

@@ -22,28 +22,28 @@ const Navbar = () => {
 
                 {/* Links - Hidden on Mobile */}
                 <div className='hidden lg:flex gap-10 font-medium text-blackish'>
-                    <Link className='navbar_link relative' href='#'>
+                    <Link className='navbar_link relative' href='/'>
                         Home
                     </Link>
-                    <Link className='navbar_link relative' href='#'>
+                    <Link className='navbar_link relative' href='/'>
                         Categories
                     </Link>
-                    <Link className='navbar_link relative' href='#'>
+                    <Link className='navbar_link relative' href='/'>
                         Men&apos;s
                     </Link>
-                    <Link className='navbar_link relative' href='#'>
+                    <Link className='navbar_link relative' href='/'>
                         Women&apos;s
                     </Link>
-                    <Link className='navbar_link relative' href='#'>
+                    <Link className='navbar_link relative' href='/'>
                         Jewelry
                     </Link>
-                    <Link className='navbar_link relative' href='#'>
-                        Perfume
+                    <Link className='navbar_link relative' href='/'>
+                        Perfume 
                     </Link>
-                    <Link className='navbar_link relative' href='#'>
+                    <Link className='navbar_link relative' href='/'>
                         Blog
                     </Link>
-                    <Link className='navbar_link relative text-red-500' href='#'>
+                    <Link className='navbar_link relative text-red-500' href='/'>
                         Hot Offers
                     </Link>
                 </div>

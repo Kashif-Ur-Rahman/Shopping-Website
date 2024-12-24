@@ -10,13 +10,13 @@ const Footer = () => {
                 </h2>
 
                 <div className="flex flex-wrap justify-center gap-6 text-xl font-medium mb-4 lg:mb-0">
-                    <a className="transition hover:text-teal-500 dark:hover:text-teal-400" href="3">
+                    <a className="transition hover:text-teal-500 dark:hover:text-teal-400" href="/">
                         Home
                     </a>
-                    <a className="transition hover:text-teal-500 dark:hover:text-teal-400" href="3">
+                    <a className="transition hover:text-teal-500 dark:hover:text-teal-400" href="/">
                         Categories
                     </a>
-                    <a className="transition hover:text-teal-500 dark:hover:text-teal-400" href="#">
+                    <a className="transition hover:text-teal-500 dark:hover:text-teal-400" href="/">
                         Products
                     </a>
 

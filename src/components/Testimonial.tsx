@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { FaQuoteLeft } from "react-icons/fa";
@@ -44,6 +46,16 @@ const Testimonial = () => {
                     </div>
                 </div>
             </div>
+            <div className="flex items-center justify-center pt-12">
+                <button
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    className="bg-blue-500 text-white text-xl py-2 px-4 rounded hover:bg-blue-600"
+                >
+                    Go to Top
+                </button>
+            </div>
+
+
         </div>
     );
 };
