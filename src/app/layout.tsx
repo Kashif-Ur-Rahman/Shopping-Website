@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import HeaderTop from "@/components/ HeaderTop";
-import HeaderMain from "@/components/HeaderMain";
+import HeaderTop from "../components/ HeaderTop";
+import HeaderMain from "../components/HeaderMain";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -12,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import MobNavbar from "@/components/MobNavbar";
 
 import { ClerkProvider } from "@clerk/nextjs";
+import { CartProvider } from "@/components/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,7 +44,10 @@ export default function RootLayout({
           <HeaderMain />
           <Navbar />
           <MobNavbar />
-          {children}
+          <CartProvider>
+            {children}
+          </CartProvider>
+
           <Footer />
         </body>
       </html>

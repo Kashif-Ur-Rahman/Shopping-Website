@@ -1,7 +1,10 @@
+"use client";
+
 import React from 'react'
 import Image from 'next/image';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import { DiCelluloid } from 'react-icons/di';
+import { useCart } from './CartContext';
+
 interface propType {
     img: string;
     title: string;
@@ -12,6 +15,15 @@ interface propType {
 
 
 const ProductCard: React.FC<propType> = ({ img, title, desc, rating, price }) => {
+
+    const { dispatch } = useCart();
+
+    const handleAddToCart = () => {
+        dispatch({
+            type: 'ADD_TO_CART',
+            payload: { img, title, desc, rating, price },
+        });
+    };
 
     const generateRatings = (rating: number) => {
         switch (rating) {
@@ -105,7 +117,12 @@ const ProductCard: React.FC<propType> = ({ img, title, desc, rating, price }) =>
                     ${price}
                     <del className='text-gray-500 font-normal'>${parseInt(price) + 50}.00</del>
                 </div>
-
+                <button
+                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                    onClick={handleAddToCart}
+                >
+                    Add to Cart
+                </button>
             </div>
 
         </div>

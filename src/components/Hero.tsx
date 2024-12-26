@@ -21,6 +21,7 @@ const Hero = () => {
             title: "Trending Items",
             mainTitle: "WOMEN'S LATEST FASHION SALE",
             price: "$30",
+            url: '/api/products/halfmoon'
         },
         {
             id: 1,
