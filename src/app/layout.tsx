@@ -1,17 +1,17 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import HeaderTop from "../components/ HeaderTop";
-import HeaderMain from "../components/HeaderMain";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import HeaderTop from "../components/header/ HeaderTop";
+import HeaderMain from "../components/header/HeaderMain";
+import Navbar from "@/components/header/Navbar";
+import Footer from "@/components/footer/Footer";
 
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MobNavbar from "@/components/MobNavbar";
+import MobNavbar from "@/components/header/MobNavbar";
 
 import { ClerkProvider } from "@clerk/nextjs";
-import { CartProvider } from "@/components/CartContext";
+import { CartProvider } from "@/context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

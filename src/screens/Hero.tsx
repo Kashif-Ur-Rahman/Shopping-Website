@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Slider from 'react-slick';
-import SlideItem from './SlideItem';
+import SlideItem from '../components/product/SlideItem';
 
 const Hero = () => {
     var settings = {
@@ -21,7 +21,7 @@ const Hero = () => {
             title: "Trending Items",
             mainTitle: "WOMEN'S LATEST FASHION SALE",
             price: "$30",
-            url: '/api/products/halfmoon'
+           
         },
         {
             id: 1,

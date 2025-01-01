@@ -1,31 +1,33 @@
 "use client";
-
-import React, { useState } from "react";
+import Link from "next/link";
+import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { useCart } from "./CartContext";
+import { useCart } from "../../context/CartContext";
+import { useRouter } from "next/navigation";
 
 const HeaderMain = () => {
   const { state } = useCart();
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const router = useRouter();
 
-  const toggleCart = () => {
-    setIsCartOpen(!isCartOpen);
+  const navigateToCart = () => {
+    router.push("/cart"); // Navigate to the Cart page
   };
 
   return (
     <div className="border-b border-gray-200 py-4">
-      {/* Parent container */}
       <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
         {/* Logo Section */}
         <div className="font-bold text-3xl sm:text-4xl text-center sm:text-left text-blackish">
-          <img
-            src="/Shopping-Hub-logo.png"
-            alt="Shopping Hub Logo"
-            className="w-20 h-20 sm:w-32 sm:h-32"
-          />
+          <Link href="/">
+            <img
+              src="/Shopping-Hub-logo.png"
+              alt="Shopping Hub Logo"
+              className="w-20 h-20 sm:w-32 sm:h-32 cursor-pointer"
+            />
+          </Link>
         </div>
 
         {/* Search Bar */}
@@ -66,32 +68,11 @@ const HeaderMain = () => {
           </div>
 
           {/* Shopping Bag Icon */}
-          <div className="relative text-gray-500 text-[30px]">
-            <HiOutlineShoppingBag onClick={toggleCart} className="cursor-pointer" />
+          <div className="relative text-gray-500 text-[30px] cursor-pointer">
+            <HiOutlineShoppingBag onClick={navigateToCart} />
             <div className="bg-red-600 rounded-full absolute top-0 right-0 w-4 h-4 text-[10px] text-white flex items-center justify-center translate-x-1 -translate-y-1">
-              {state.cart.length} {/* Display the number of items in the cart */}
+              {state.cart.length}
             </div>
-
-            {/* Cart Dropdown */}
-            {isCartOpen && (
-              <div className="absolute top-10 left-6 w-64 bg-gray-500 text-white text-sm shadow-lg rounded-lg p-4">
-                <h3 className="font-bold text-lg text-white mb-2">Your Cart</h3>
-                {state.cart.length > 0 ? (
-                  <ul>
-                    {state.cart.map((item, index) => (
-                      <li key={index} className="border-b py-2">
-                        <div className="flex justify-between">
-                          <span>{item.title}</span>
-                          <span>${item.price}</span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-white text-xl">Your cart is empty.</p>
-                )}
-              </div>
-            )}
           </div>
         </div>
       </div>
